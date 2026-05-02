@@ -1057,4 +1057,59 @@ footer {
         padding: 0.75rem var(--spacing-lg);
     }
 
+}html.dark {
+    --white: #0b0f19;
+    --black: #f9fafb;
+
+    --gray-200: #1f2937;
+    --gray-400: #9ca3af;
+
+    --purple-500: #8b5cf6;
+    --purple-700: #c4b5fd;
+}.theme-toggle {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--purple-100);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-default);
+}
+
+.theme-toggle:hover {
+    background: var(--purple-200);
+    transform: scale(1.1);
+}
+
+/* Ícones */
+.theme-toggle .icon {
+    position: absolute;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+/* estado padrão (light) */
+.theme-toggle .sun {
+    opacity: 0;
+    transform: rotate(90deg) scale(0);
+}
+
+.theme-toggle .moon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+/* quando está em dark */
+html.dark .theme-toggle .sun {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+html.dark .theme-toggle .moon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0);
 }
