@@ -998,10 +998,10 @@ footer {
         margin-bottom: var(--spacing-xs);
     }
 
-    .social-icon {
-        width: 4rem;
-        height: 4rem;
-    }
+    .social-icon img {
+    width: 100%;
+    transition: all 0.3s ease;
+}
 
     /* Formulário */
     form {
@@ -1112,4 +1112,58 @@ html.dark .theme-toggle .sun {
 html.dark .theme-toggle .moon {
     opacity: 0;
     transform: rotate(-90deg) scale(0);
+}/* ===== FORM MODERNO ===== */
+
+form input,
+form textarea {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    transition: all 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--purple-500);
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+/* estado erro */
+.input-error {
+    border-color: var(--error) !important;
+}
+
+/* botão loading */
+.botao.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* mensagem de sucesso fake */
+.form-success {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #22c55e;
+}
+html.dark .social-icon img {
+    filter: invert(1) brightness(1.2);
+}.social-icon:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+.social-icon:hover img {
+    filter: brightness(0)
+            saturate(100%)
+            invert(42%)
+            sepia(93%)
+            saturate(1352%)
+            hue-rotate(243deg)
+            brightness(90%)
+            contrast(95%);
+}
+html.dark form input,
+html.dark form textarea {
+    color: var(--black);
+}html.dark form input::placeholder,
+html.dark form textarea::placeholder {
+    color: var(--gray-400);
 }
